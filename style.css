@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  height: 100vh;
+  background-color: #0F0D13;
+  color: #E1E1E6;
+
+  display: grid;
+  place-content: center;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+img {
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+/* Reusable classes */
+.opacity {
+  opacity: 0.6;
+}
+
+.spacing {
+  margin: 30px 0;
+}
+
+.artist-name {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.song-name {
+  font-size: 19px;
+  line-height: 2rem;
+}
+
+.player-time {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: .6rem;
+  font-size: 1rem;
+}
+
+.player-track {
+  position: relative;
+}
+
+.player-track::before {
+  content: "";
+  height: 6px;
+  width: 100%;
+  display: block;
+  
+  background: #d9d9d9;
+  opacity: 0.3;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.player-track::after {
+  content: "";
+  height: 6px;
+  width: 80%;
+  display: block;
+  
+  background: #d9d9d9;
+  border-radius: 10px;
+}
+/* End reusable classes */
+
+#app {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-areas: 
+  "A B"
+  "A C";
+  gap: 32px;
+}
+
+.player { 
+  background-color: #2A2141;
+  border-radius: 8px;
+}
+
+#player-1
+.commands img {
+  width: 100%;
+  height: 28px;
+}
+
+#player-1 {
+  grid-area: A;
+  width: fit-content;
+
+  grid-row: 1/3;
+  padding: 38px;
+}
+
+#player-1 img {
+  width: 190px;
+  height: 190px;
+}
+
+#player-2 {
+  grid-area: B;
+  height: fit-content;
+}
+
+#player-3 {
+  grid-area: C;
+}
+
+#player-2,
+#player-3 {
+  width: fit-content;
+  height: fit-content;
+  padding: 30px;
+}
+
+#player-2 img,
+#player-3 img {
+  width: 84px;
+  height: 84px;
+  
+}
+
+#player-2 .song-details,
+#player-3 .song-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#player-2 .song-details > div,
+#player-3 .song-details > div {
+  margin: 0 30px;
+}
+
+#player-2 .commands,
+#player-3 .commands {
+  text-align: center;
+}
+
+#player-2 .commands img,
+#player-3 .commands img {
+  width: 70%;
+  height: 40px;
+}
